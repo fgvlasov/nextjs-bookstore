@@ -10,6 +10,8 @@ import useInfoModalStore from "@/hooks/useInfoModalStore";
 
 interface BookCardProps {
   data: BookInterface;
+  view: String;
+  listId: any
 }
 
 const BookCard: React.FC<BookCardProps> = ({ data, view, listId }) => {
