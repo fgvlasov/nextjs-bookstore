@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import PDFSearch from "./PDFSearch";
 import pdfjs from "pdfjs-dist";
+import { BookList } from "./MultiPDFSearch";
 
 interface MultiPDFSearchProps {
   pdfUrls?: string[]; // Add "?" to make it optional
 }
 
-const MultiPDFSearch: React.FC<MultiPDFSearchProps> = ({ pdfUrls = [] }) => {
+const MultiPDFSearch: React.FC<BookList> = (books) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState<
     Map<string, boolean | null>
@@ -38,22 +39,22 @@ const MultiPDFSearch: React.FC<MultiPDFSearchProps> = ({ pdfUrls = [] }) => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <button
-          onClick={() => pdfUrls.forEach((pdfUrl) => handleSearch(pdfUrl))}
+          onClick={() => books.books.forEach((book) => handleSearch(book.title))}
         >
           Search in All PDFs
         </button>
       </div>
       <div>
-        {pdfUrls.map((pdfUrl) => (
-          <div key={pdfUrl}>
-            <button onClick={() => handleSearch(pdfUrl)}>
-              Search in {pdfUrl}
+        {books.books.map((pdfUrl) => (
+          <div key={pdfUrl.title}>
+            <button onClick={() => handleSearch(pdfUrl.title)}>
+              Search in {pdfUrl.title}
             </button>
-            <div id={pdfUrl}>
+            <div id={pdfUrl.title}>
               {/* Conditionally render the PDFSearch component based on search result */}
-              {searchResults.get(pdfUrl) !== null && (
-                <PDFSearch pdfUrl={pdfUrl} />
-              )}
+              {/*earchResults.get(pdfUrl.title) !== null && (
+                <PDFSearch BookList={pdfUrl.} />
+              )*/}
             </div>
           </div>
         ))}
