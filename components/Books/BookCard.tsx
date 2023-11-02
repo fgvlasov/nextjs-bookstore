@@ -10,7 +10,7 @@ import useInfoModalStore from "@/hooks/useInfoModalStore";
 
 interface BookCardProps {
   data: BookInterface;
-  view: String;
+  view: string;
   listId: any
 }
 
