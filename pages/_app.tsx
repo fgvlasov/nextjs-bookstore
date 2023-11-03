@@ -9,11 +9,11 @@ export default function App({
   pageProps: { session, ...pageProps },
 }: AppProps) {
   return (
-    <SessionProvider session={session}>
+    // <SessionProvider session={session}>
       <Head>
         <title>Book Store - Software development course</title>
       </Head>
       <Component {...pageProps} />
-    </SessionProvider>
+    // </SessionProvider>
   );
 }
