@@ -9,12 +9,12 @@ export default function App({
   pageProps: { ...pageProps },
 }: AppProps) {
   return (
-    {/* <SessionProvider session={session} /> */}
-    <div>
+    <>
+      {/* <SessionProvider session={session} /> */}
       <Head>
         <title>Book Store - Software development course</title>
       </Head>
       <Component {...pageProps} />
-    </div>
+    </>
   );
 }
