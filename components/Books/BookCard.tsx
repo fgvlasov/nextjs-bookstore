@@ -11,8 +11,8 @@ import useInfoModalStore from "@/hooks/useInfoModalStore";
 interface BookCardProps {
   data: BookInterface;
   view: string;
-
   listId?: number;
+}
 
 const BookCard: React.FC<BookCardProps> = ({ data, view, listId }) => {
   const router = useRouter();
