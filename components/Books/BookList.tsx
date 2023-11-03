@@ -128,7 +128,7 @@ const BookList: React.FC<BookListProps> = ({ data, title, type }) => {
       )}
 
       {view === "grid" && (
-        <div className="grid gap-2 grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid gap-2 grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
           {data.map((book) => (
             <BookCard key={book.id} data={book} view={view} listId={0} />
           ))}

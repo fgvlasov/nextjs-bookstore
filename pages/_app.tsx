@@ -6,14 +6,16 @@ import "../styles/globals.css";
 
 export default function App({
   Component,
-  pageProps: { session, ...pageProps },
+  pageProps: {session, ...pageProps },
 }: AppProps) {
   return (
-    <SessionProvider session={session}>
+    <>
+      <SessionProvider session={session}>
       <Head>
         <title>Book Store - Software development course</title>
       </Head>
       <Component {...pageProps} />
-    </SessionProvider>
+      </SessionProvider>
+    </>
   );
 }
