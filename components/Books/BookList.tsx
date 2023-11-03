@@ -90,14 +90,14 @@ const BookList: React.FC<BookListProps> = ({ data, title, type }) => {
       {view === "grid" && (
         <div className="grid gap-2 grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {data.map((book) => (
-            <BookCard key={book.id} data={book} view={view} listId={0}/>
+            <BookCard key={book.id} data={book} view={view} listId={0} />
           ))}
         </div>
       )}
       {view === "columns" && (
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3  bg-slate-500 p-4">
           {data.map((book) => (
-            <BookCard key={book.id} data={book} view={view} listId={0}/>
+            <BookCard key={book.id} data={book} view={view} listId={0} />
           ))}
         </div>
       )}
