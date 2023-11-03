@@ -46,7 +46,7 @@ const BookCard: React.FC<BookCardProps> = ({ data, view, listId }) => {
       <div
         className="
           z-10
-          
+          bg-zinc-800
           p-2
           lg:p-4
           absolute
