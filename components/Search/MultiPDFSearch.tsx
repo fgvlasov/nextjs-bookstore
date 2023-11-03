@@ -5,14 +5,12 @@ interface MultiPDFSearchProps {
 }
 
 const MultiPDFSearch: React.FC<MultiPDFSearchProps> = ({ pdfUrls }) => {
-
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [foundBooks, setFoundBooks] = useState<IBook[]>([]);
+  const [foundBooks, setFoundBooks] = useState<string[]>([]);
 
   const handleSearch = () => {
     // Perform your search logic here and find all matching book titles
     // For simplicity, I'm using a placeholder value based on the search term
-
     const matchingBooks = pdfUrls.filter((pdfUrl) =>
       pdfUrl.toLowerCase().includes(searchTerm.toLowerCase())
     );
